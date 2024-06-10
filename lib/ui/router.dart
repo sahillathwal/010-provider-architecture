@@ -10,7 +10,7 @@ class Router {
       case '/':
         return MaterialPageRoute(builder: (_) => const HomeView());
       case 'login':
-        return MaterialPageRoute(builder: (_) => const LoginView());
+        return MaterialPageRoute(builder: (_) => LoginView());
       case 'post':
         var post = settings.arguments as Post;
         return MaterialPageRoute(

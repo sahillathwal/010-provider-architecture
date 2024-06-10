@@ -5,14 +5,9 @@ import 'package:provider_architecture/ui/shared/app_colors.dart';
 import 'package:provider_architecture/ui/views/base_view.dart';
 import 'package:provider_architecture/ui/widgets/login_header.dart';
 
-class LoginView extends StatefulWidget {
-  const LoginView({Key? key}) : super(key: key);
+class LoginView extends StatelessWidget {
+  LoginView({Key? key}) : super(key: key);
 
-  @override
-  State<LoginView> createState() => _LoginViewState();
-}
-
-class _LoginViewState extends State<LoginView> {
   final TextEditingController controller = TextEditingController();
 
   @override
@@ -39,6 +34,7 @@ class _LoginViewState extends State<LoginView> {
                     onPressed: () async {
                       var loginSuccess = await model.login(controller.text);
                       if (loginSuccess) {
+                        controller.clear();
                         Navigator.pushNamed(context, '/');
                       }
                     })

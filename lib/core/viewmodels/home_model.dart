@@ -9,7 +9,12 @@ class HomeModel extends BaseModel {
   List<Post>? posts;
   Future getPosts(int userId) async {
     setState(ViewState.busy);
+    print('Getting posts for user $userId');
     posts = await _api.getPostsForUser(userId);
+    if (posts!.isEmpty) {
+      print('No posts found for user $userId');
+    }
+    print('Posts found for user $userId: ${posts!.length}');
     setState(ViewState.idle);
   }
 }

@@ -17,6 +17,7 @@ class LoginModel extends BaseModel {
       setState(ViewState.idle);
       return false;
     }
+    errorMessage = null;
     var success = await _authenticationService.login(userId);
     setState(ViewState.idle);
     return success;

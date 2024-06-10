@@ -5,7 +5,7 @@ class User {
   User({required this.id, required this.name, required this.username});
 
   User.initial()
-      : id = 0,
+      : id = 1,
         name = '',
         username = '';
 
