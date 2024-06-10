@@ -4,19 +4,20 @@ import 'package:provider_architecture/core/models/post.dart';
 class PostListItem extends StatelessWidget {
   final Post post;
   final void Function()? onTap;
-  const PostListItem({required this.post, required this.onTap});
+  const PostListItem({Key? key, required this.post, required this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
-        padding: EdgeInsets.all(10.0),
+        margin: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
+        padding: const EdgeInsets.all(10.0),
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(5.0),
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(
                   blurRadius: 3.0,
                   offset: Offset(0.0, 2.0),
@@ -27,7 +28,8 @@ class PostListItem extends StatelessWidget {
           children: <Widget>[
             Text(
               post.title,
-              style: TextStyle(fontWeight: FontWeight.w900, fontSize: 16.0),
+              style:
+                  const TextStyle(fontWeight: FontWeight.w900, fontSize: 16.0),
             ),
             Text(post.body, maxLines: 2, overflow: TextOverflow.ellipsis)
           ],

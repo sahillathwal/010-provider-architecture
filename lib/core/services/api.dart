@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 class Api {
   static const endpoint = 'https://jsonplaceholder.typicode.com';
 
-  var client = new http.Client();
+  var client = http.Client();
 
   Future<User>? getUserProfile(int userId) async {
     // Get user profile for id
