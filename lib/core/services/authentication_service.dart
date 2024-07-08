@@ -14,10 +14,12 @@ class AuthenticationService {
     // Get the user profile for id
     var fetcheduser = await _api.getUserProfile(userId);
 // Check if success
-    var hasUser = fetcheduser != null;
-    if (hasUser) {
-      userController.add(fetcheduser!);
+    if (fetcheduser != null) {
+      // Dart can promote this local variable to non-nullable.
+      userController.add(
+          fetcheduser); // Now safe to add because fetcheduser is non-null here.
+      return true;
     }
-    return hasUser;
+    return false;
   }
 }
