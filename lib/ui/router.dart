@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:provider_architecture/core/models/post.dart';
-import 'package:provider_architecture/ui/views/home_view.dart';
+// import 'package:provider_architecture/ui/views/home_view.dart';
 import 'package:provider_architecture/ui/views/login_view.dart';
 import 'package:provider_architecture/ui/views/post_view.dart';
+import 'package:provider_architecture/ui/views/tab_container.dart';
 
 class Router {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => const HomeView());
+        return MaterialPageRoute(builder: (_) => const TabContainer());
       case 'login':
         return MaterialPageRoute(builder: (_) => LoginView());
       case 'post':
