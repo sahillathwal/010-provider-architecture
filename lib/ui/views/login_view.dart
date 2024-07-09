@@ -6,7 +6,7 @@ import 'package:provider_architecture/ui/views/base_view.dart';
 import 'package:provider_architecture/ui/widgets/login_header.dart';
 
 class LoginView extends StatelessWidget {
-  LoginView({Key? key}) : super(key: key);
+  LoginView({super.key});
 
   final TextEditingController controller = TextEditingController();
 
@@ -35,6 +35,7 @@ class LoginView extends StatelessWidget {
                       var loginSuccess = await model.login(controller.text);
                       if (loginSuccess) {
                         controller.clear();
+                        // ignore: use_build_context_synchronously
                         Navigator.pushNamed(context, '/');
                       }
                     })

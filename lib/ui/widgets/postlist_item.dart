@@ -4,8 +4,7 @@ import 'package:provider_architecture/core/models/post.dart';
 class PostListItem extends StatelessWidget {
   final Post post;
   final void Function()? onTap;
-  const PostListItem({Key? key, required this.post, required this.onTap})
-      : super(key: key);
+  const PostListItem({super.key, required this.post, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,8 @@ class PostListItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              post.title,
+              '${post.title} - ${post.likes.toString()}',
+              maxLines: 2,
               style:
                   const TextStyle(fontWeight: FontWeight.w900, fontSize: 16.0),
             ),

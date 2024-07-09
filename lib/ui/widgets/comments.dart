@@ -8,7 +8,7 @@ import 'package:provider_architecture/ui/views/base_view.dart';
 
 class Comments extends StatelessWidget {
   final int postId;
-  const Comments(this.postId, {Key? key}) : super(key: key);
+  const Comments(this.postId, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class Comments extends StatelessWidget {
 /// Renders a single comment given a comment model
 class CommentItem extends StatelessWidget {
   final Comment comment;
-  const CommentItem(this.comment, {Key? key}) : super(key: key);
+  const CommentItem(this.comment, {super.key});
 
   @override
   Widget build(BuildContext context) {

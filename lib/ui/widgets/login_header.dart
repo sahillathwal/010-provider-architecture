@@ -6,8 +6,7 @@ class LoginHeader extends StatelessWidget {
   final TextEditingController? controller;
   final String? validationMessage;
 
-  const LoginHeader({Key? key, this.controller, this.validationMessage})
-      : super(key: key);
+  const LoginHeader({super.key, this.controller, this.validationMessage});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +25,7 @@ class LoginHeader extends StatelessWidget {
 class LoginTextField extends StatelessWidget {
   final TextEditingController controller;
 
-  const LoginTextField(this.controller, {Key? key}) : super(key: key);
+  const LoginTextField(this.controller, {super.key});
 
   @override
   Widget build(BuildContext context) {

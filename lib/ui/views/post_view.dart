@@ -6,10 +6,11 @@ import 'package:provider_architecture/ui/shared/app_colors.dart';
 import 'package:provider_architecture/ui/shared/text_styles.dart';
 import 'package:provider_architecture/ui/shared/ui_helpers.dart';
 import 'package:provider_architecture/ui/widgets/comments.dart';
+import 'package:provider_architecture/ui/widgets/like_button.dart';
 
 class PostView extends StatelessWidget {
   final Post? post;
-  const PostView({Key? key, this.post}) : super(key: key);
+  const PostView({super.key, this.post});
 
   @override
   Widget build(BuildContext context) {
@@ -28,6 +29,9 @@ class PostView extends StatelessWidget {
             ),
             UIHelper.verticalSpaceMedium(),
             Text(post!.body),
+            LikeButton(
+              postId: post!.id,
+            ),
             Comments(post!.id)
           ],
         ),

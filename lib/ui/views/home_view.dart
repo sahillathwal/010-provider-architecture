@@ -11,7 +11,7 @@ import 'package:provider_architecture/ui/views/base_view.dart';
 import 'package:provider_architecture/ui/widgets/postlist_item.dart';
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class HomeView extends StatelessWidget {
                               style: subHeaderStyle),
                         ),
                         UIHelper.verticalSpaceSmall(),
-                        Expanded(child: getPostsUi(model.posts!)),
+                        Expanded(child: getPostsUi(model.posts)),
                       ])
                 : const Center(child: CircularProgressIndicator())));
   }
